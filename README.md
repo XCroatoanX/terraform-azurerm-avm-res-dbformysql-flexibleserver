@@ -263,8 +263,8 @@ Default: `{}`
 
 ### <a name="input_enable_telemetry"></a> [enable\_telemetry](#input\_enable\_telemetry)
 
-Description: This variable controls whether or not telemetry is enabled for the module.  
-For more information see <https://aka.ms/avm/telemetryinfo>.  
+Description: This variable controls whether or not telemetry is enabled for the module.
+For more information see <https://aka.ms/avm/telemetryinfo>.
 If it is set to false, then no telemetry will be collected.
 
 Type: `bool`
@@ -310,7 +310,7 @@ Default: `true`
 
 ### <a name="input_high_availability"></a> [high\_availability](#input\_high\_availability)
 
-Description: - `mode` - (Required) The high availability mode for the MySQL Flexible Server. Only `ZoneRedundant` is supported. See: https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/azure-resources/DBforMySQL/flexibleServers/#enable-ha-with-zone-redundancy
+Description: - `mode` - (Required) The high availability mode for the MySQL Flexible Server. `ZoneRedundant` and `SameZone` are supported. See: https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/azure-resources/DBforMySQL/flexibleServers/#enable-ha-with-zone-redundancy
 - `standby_availability_zone` - (Optional) Specifies the Availability Zone in which the standby Flexible Server should be located. Possible values are `1`, `2` and `3`.
 
 Type:
@@ -326,7 +326,7 @@ Default:
 
 ```json
 {
-  "mode": "ZoneRedundant",
+  "mode": null,
   "standby_availability_zone": null
 }
 ```
@@ -531,9 +531,9 @@ Default: `{}`
 
 ### <a name="input_server_configuration"></a> [server\_configuration](#input\_server\_configuration)
 
-Description:     (Optional) A configuration block supports the following:  
-    object({  
-        name = (Required) Specifies the name of the MySQL Flexible Server Configuration, which needs to be a valid MySQL configuration name. Changing this forces a new resource to be created.  
+Description:     (Optional) A configuration block supports the following:
+    object({
+        name = (Required) Specifies the name of the MySQL Flexible Server Configuration, which needs to be a valid MySQL configuration name. Changing this forces a new resource to be created.
         value = (Required) Specifies the value of the MySQL Flexible Server Configuration. See the MySQL documentation for valid values.
     })
 
